@@ -1,0 +1,39 @@
+.advantage {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+}
+
+.info {
+    display: grid;
+    gap: 10px;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 700;
+}
+
+.mark {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.mark:after {
+    content: " ";
+    margin-top: 25px;
+    margin-bottom: 50px;
+    height: auto;
+    width: 1px;
+    background-color: rgba(210, 210, 210, 1);
+    position: relative;
+    left: 22px;
+}
+
+.description {
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+}
