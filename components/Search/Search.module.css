@@ -1,0 +1,14 @@
+.search {
+    position: relative;
+    width: 100%;
+}
+
+.glass {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 7px;
+}
