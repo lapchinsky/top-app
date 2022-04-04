@@ -4,10 +4,12 @@
 
 .title {
 	display: grid;
-	grid-template-columns: auto 1fr auto;
-	gap: 20px;
 
 	align-items: baseline;
+
+	margin-bottom: 30px;
+	grid-template-columns: auto 1fr auto;
+	gap: 20px;
 	justify-items: left;
 }
 
@@ -53,4 +55,10 @@
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 27px;
+}
+
+@media screen and (max-width: 640px) {
+	.title {
+		grid-template-columns: auto 1fr;
+	}
 }
