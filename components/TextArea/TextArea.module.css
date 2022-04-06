@@ -1,5 +1,10 @@
+.textareaWrapper {
+	position: relative;
+}
+
 .textarea {
 	padding: 7px 15px;
+	width: 100%;
 
 	resize: none;
 
@@ -17,4 +22,15 @@
 
 .textarea::placeholder {
 	color: rgb(164 164 164 / 100%);
+}
+
+.error {
+	border: 1px solid var(--red);
+}
+
+.errorMessage {
+	color: var(--red);
+	position: absolute;
+	bottom: -15px;
+	left: 2px;
 }

@@ -3,7 +3,7 @@ import styles from './TopPageComponent.module.css';
 import {Advantage, HhData, Htag, Product, Sort, Tag} from "../../components";
 import {TopLevelCategory} from "../../interfaces/page.interface";
 import {SortEnum} from "../../components/Sort/Sort.props";
-import {useReducer} from "react";
+import {useEffect, useReducer} from "react";
 import {sortReducer} from "../../components/Sort/sortReducer";
 
 export const TopPageComponent = ({page, products, firstCategory}: TopPageComponentProps): JSX.Element => {
@@ -13,6 +13,10 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
         dispatchSort({ type: sort });
     };
 
+    useEffect(() => {
+        dispatchSort({ type: 'reset', initialState: products });
+    }, [products]);
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
@@ -21,7 +25,7 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
                 <Sort sort={sort} setSort={setSort} />
             </div>
             <div>
-                {sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p} />)}
+                {sortedProducts && sortedProducts.map(p => <Product layout key={p._id} product={p} />)}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag='h2'>Вакансии - {page.category}</Htag>
@@ -30,7 +34,7 @@ export const TopPageComponent = ({page, products, firstCategory}: TopPageCompone
             {firstCategory == TopLevelCategory.Courses && page.hh && <HhData {...page.hh}/>}
             <div className={styles.advantages}>
                 <Htag tag='h2'>Преимущества</Htag>
-                {page.advantages && page.advantages.length > 0 && page.advantages.map(el => <Advantage title={el.title}>{el.description}</Advantage>)}
+                {page.advantages && page.advantages.length > 0 && page.advantages.map(el => <Advantage key={el._id} title={el.title}>{el.description}</Advantage>)}
             </div>
                 {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{__html: page.seoText}} />}
             <div className={styles.tags}>

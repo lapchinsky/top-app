@@ -1,11 +1,11 @@
 import {LayoutProps} from "./Layout.props";
 import styles from './Layout.module.css';
-import cn from "classnames";
 import {Header} from "./Header/Header";
 import {Sidebar} from "./Sidebar/Sidebar";
 import {Footer} from "./Footer/Footer";
 import {FunctionComponent} from "react";
 import {AppContextProvider, IAppContext} from "../context/app.context";
+import {Up} from "../components";
 
 const Layout = ({children}: LayoutProps): JSX.Element => {
     return (
@@ -16,6 +16,7 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
                 {children}
             </div>
             <Footer className={styles.footer}/>
+            <Up />
         </div>
     );
 };
