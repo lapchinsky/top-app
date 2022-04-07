@@ -15,10 +15,12 @@
 
 .hhTitle {
 	display: grid;
-	grid-template-columns: auto 1fr;
-	gap: 20px;
 
 	align-items: baseline;
+
+	margin-top: 25px;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
 	justify-items: left;
 }
 
@@ -57,8 +59,14 @@
 	line-height: 27px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
 	.title {
 		grid-template-columns: auto 1fr;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.wrapper {
+		margin-top: 15px;
 	}
 }

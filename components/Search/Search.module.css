@@ -1,6 +1,8 @@
 .search {
 	position: relative;
+}
 
+.input input {
 	width: 100%;
 }
 

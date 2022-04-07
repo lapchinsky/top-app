@@ -27,7 +27,7 @@ export const Search = ({className, ...props}: SearchProps): JSX.Element => {
 
     return (
         <div className={cn(className, styles.search)} {...props}>
-            <Input placeholder='Поиск...'
+            <Input className={styles.input} placeholder='Поиск...'
                     value={search}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
                     onKeyDown={handleKeyDown}
