@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {Button, Htag, Input, P, Rating, Tag, TextArea} from '../components';
+import React from 'react';
 import {withLayout} from "../layout/Layout";
 import {GetStaticProps} from "next";
 import axios from 'axios';
@@ -8,21 +7,10 @@ import {API} from "../helpers/api";
 
 function Home({menu}: HomeProps): JSX.Element {
 
-    const [rating, setRating] = useState<number>(4);
 
     return (
         <>
-            <Htag tag='h1'>Text</Htag>
-            <Button appearance='primary' arrow='down'>Кнопка</Button>
-            <P size='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at deserunt fugiat quod
-                reiciendis saepe.</P>
-            <Tag size='small'>Ghost</Tag>
-            <Tag size='medium' color='red'>Red</Tag>
-            <Tag size='medium' color='green'>Green</Tag>
-            <Tag size='small' color='primary'>Primary</Tag>
-            <Rating rating={rating} isEditable setRating={setRating}/>
-            <Input placeholder='test'/>
-            <TextArea placeholder='Текст отзыва'/>
+            {menu}
         </>
     );
 }
