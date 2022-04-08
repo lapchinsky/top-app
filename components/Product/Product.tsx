@@ -39,7 +39,7 @@ export const Product = motion(forwardRef(({
         <div className={className} {...props} ref={ref}>
             <Card className={styles.product}>
                 <div className={styles.logo}>
-                    <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70}
+                    <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70}
                            height={70}/>
                 </div>
                 <div className={styles.title}>{product.title}</div>
@@ -49,7 +49,7 @@ export const Product = motion(forwardRef(({
                     <Tag className={styles.oldPrice} color='green'>{priceRu(product.price - product.oldPrice)}</Tag>}
                 </div>
                 <div className={styles.credit}>
-                    {priceRu(product.credit)}/<span className={styles.month}>мес</span>
+                    {product.credit ? priceRu(product.credit) : <span>{priceRu(product.price)}</span>}/<span className={styles.month}>мес</span>
                 </div>
                 <div className={styles.rating}><Rating rating={product.reviewAvg ?? product.initialRating}/></div>
                 <div className={styles.tags}>{product.categories.map(c => <Tag key={c} className={styles.category}
